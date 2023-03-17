@@ -6,7 +6,7 @@ module.exports = {
   plugins: [
     "prettier-plugin-svelte",
     "prettier-plugin-organize-imports",
-    "prettier-plugin-tailwindcss",
+    require('prettier-plugin-tailwindcss'),
   ],
   pluginSearchDirs: ["."],
   tailwindConfig: "./tailwind.config.cjs",
