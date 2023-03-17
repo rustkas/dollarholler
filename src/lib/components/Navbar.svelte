@@ -37,6 +37,7 @@
    background: url('/images/active-nav--left.svg') left top no-repeat, url('/images/active-nav--right.svg') right top no-repeat;
   }
   nav ul li a.active:hover {
-   @apply px-9;
+   @apply px-9 text-goldenFizz;
   }
+
 </style>
