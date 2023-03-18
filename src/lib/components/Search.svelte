@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Search from '$lib/components/Icons/Search.svelte';
+  import Search from '$lib/components/Icon/Search.svelte';
 </script>
 
 <div class="relative flex w-full items-baseline">

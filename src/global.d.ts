@@ -20,7 +20,7 @@ interface LineItem {
 }
 
 interface Client {
-  clientStatus: ClientStatus
+  clientStatus?: ClientStatus
   city: string
   email: string
   id: string
