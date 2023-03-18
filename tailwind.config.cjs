@@ -1,17 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js,svelte,ts}"],
+  content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     fontFamily: {
-      sansSerif: ['Source Sans Pro', 'sans-serif'],
-      mono: ['Source Code Pro', 'monospace'],
+      sansSerif: ['Source Sans Pro'],
+      mono: ['Source Code Pro'],
       handwriting: ['Kalam', 'cursive']
     },
     extend: {
       backgroundImage: {
         arrowLeftUp: "url('/images/arrow-left-up.svg')",
         arrowRightUp: "url('/images/arrow-right-up.svg')",
+        chevronDown: "url('/images/chevron--down.svg')",
         circle: "url('/images/circle.svg')"
+      },
+      backgroundPosition: {
+        'right-center': '97% center'
       },
       borderWidth: {
         '1': '1px',
@@ -23,21 +27,22 @@ module.exports = {
         tableRow: '0px 0px 6px rgba(0, 0, 0, 0.16)'
       },
       colors: {
-        lavenderIndigo: '#8657e1',
+        blueGem: '#3813a0',
+        caribbeanGreen: '#00ca9e',
+        caribbeanGreen: '#1CC6A0',
         daisyBush: '#4714a5',
+        fog: '#decaec',
+        gallery: '#efeaf2',
         goldenFizz: '#feff40',
-        whisper: '#f9f4f9',
+        lavenderIndigo: '#8657e1',
+        monsoon: '#777878',
         pastelPurple: '#b2a1bb',
+        prim: '#ede6ef',
         purple: '#7209b7',
         robinEggBlue: '#00e9c0',
-        blueGem: '#3813a0',
-        caribbeanBlue: '#1CC6A0',
         scarlet: '#f72f45',
-        monsoon: '#777878',
         silver: '#c0c0c0',
-        gallery: '#efeaf2',
-        caribbeanGreen: '#00ca9e',
-        fog: '#decaec',
+        whisper: '#f9f4f9',
       },
       gridTemplateColumns: {
         'invoiceTable': '100px 100px 60px 1fr 116px 32px 32px',
@@ -45,10 +50,10 @@ module.exports = {
       },
       zIndex: {
         modal: 999,
-        overlay: 998,
+        slidePanel: 998,
+        overlay: 997,
         navBarToggle: 91,
         navBar: 90,
-
       }
     }
   },

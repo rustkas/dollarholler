@@ -30,6 +30,7 @@
   li {
     @apply border-b-2 border-whisper;
   }
+
   li:last-child {
     @apply border-b-0;
   }

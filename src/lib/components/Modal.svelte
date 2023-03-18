@@ -3,6 +3,7 @@
   import Portal from '$lib/components/Portal.svelte';
   import Cancel from './Icon/Cancel.svelte';
   import Overlay from './Overlay.svelte';
+
   export let isVisible: boolean = false;
   const dispatch = createEventDispatcher();
 </script>

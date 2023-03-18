@@ -11,10 +11,12 @@
   import Modal from '$lib/components/Modal.svelte';
   import Button from '$lib/components/Button.svelte';
   import { deleteInvoice } from '$lib/stores/InvoiceStore';
+
   export let invoice: Invoice;
   let isAdditionalMenuShowing = false;
   let isOptionsDisabled = false;
   let isModalShowing = false;
+
   const handleDelete = () => {
     isModalShowing = true;
     isAdditionalMenuShowing = false;
@@ -26,6 +28,7 @@
   const handleSendInvoice = () => {
     console.log('sending');
   };
+
   const getInvoiceLabel = () => {
     if (invoice.invoiceStatus === 'draft') {
       return 'draft';
@@ -112,29 +115,37 @@
       'clientName amount'
       'dueDate status';
   }
+
   @media (min-width: 1024px) {
     .invoice-row {
       grid-template-areas: 'status dueDate invoiceNumber clientName amount viewButton moreButton';
     }
   }
+
   .invoice-row .status {
     grid-area: status;
   }
+
   .invoice-row .dueDate {
     grid-area: dueDate;
   }
+
   .invoice-row .invoiceNumber {
     grid-area: invoiceNumber;
   }
+
   .invoice-row .clientName {
     grid-area: clientName;
   }
+
   .invoice-row .amount {
     grid-area: amount;
   }
+
   .invoice-row .viewButton {
     grid-area: viewButton;
   }
+
   .invoice-row .moreButton {
     grid-area: moreButton;
   }

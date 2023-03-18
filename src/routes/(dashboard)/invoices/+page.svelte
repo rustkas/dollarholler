@@ -9,7 +9,10 @@
   import InvoiceRowHeader from './InvoiceRowHeader.svelte';
   import Button from '$lib/components/Button.svelte';
   import SlidePanel from '$lib/components/SlidePanel.svelte';
+  import InvoiceForm from './InvoiceForm.svelte';
+
   let isInvoiceFormShowing: boolean = false;
+
   onMount(() => {
     loadInvoices();
     console.log($invoices);
@@ -64,6 +67,8 @@
   <SlidePanel
     on:closePanel={() => {
       isInvoiceFormShowing = false;
-    }}>Yolo</SlidePanel
+    }}
   >
+    <InvoiceForm />
+  </SlidePanel>
 {/if}
