@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   body {
     @apply font-sansSerif
@@ -22,4 +21,7 @@
 }
 
 @layer utilities {
+  .center {
+    @apply flex items-center justify-center
+  }
 }
