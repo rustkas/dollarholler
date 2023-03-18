@@ -8,6 +8,8 @@
   import BlankState from './BlankState.svelte';
   import InvoiceRowHeader from './InvoiceRowHeader.svelte';
   import Button from '$lib/components/Button.svelte';
+  import SlidePanel from '$lib/components/SlidePanel.svelte';
+  let isInvoiceFormShowing: boolean = false;
   onMount(() => {
     loadInvoices();
     console.log($invoices);
@@ -30,7 +32,12 @@
 
   <!-- new invoice button -->
   <div>
-    <Button label="+ Invoice" onClick={() => {}} />
+    <Button
+      label="+ Invoice"
+      onClick={() => {
+        isInvoiceFormShowing = true;
+      }}
+    />
   </div>
 </div>
 
@@ -51,3 +58,12 @@
     <CircledAmount label="Total" amount={`$${centsToDollars(sumInvoices($invoices))}`} />
   {/if}
 </div>
+
+<!-- slide panel -->
+{#if isInvoiceFormShowing}
+  <SlidePanel
+    on:closePanel={() => {
+      isInvoiceFormShowing = false;
+    }}>Yolo</SlidePanel
+  >
+{/if}
