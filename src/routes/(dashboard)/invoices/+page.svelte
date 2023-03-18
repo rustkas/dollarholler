@@ -7,6 +7,7 @@
   import { centsToDollars, sumInvoices } from '$lib/utils/moneyHelpers';
   import BlankState from './BlankState.svelte';
   import InvoiceRowHeader from './InvoiceRowHeader.svelte';
+  import Portal from '$lib/components/Portal.svelte';
   onMount(() => {
     loadInvoices();
     console.log($invoices);
@@ -38,7 +39,7 @@
 
 <!-- list of invoices -->
 <div>
-  <!-- header -->
+  <Portal><div>Invoice Form</div></Portal>
 
   <!-- invoices -->
   {#if $invoices === null}
