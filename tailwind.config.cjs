@@ -9,6 +9,8 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
+        arrowLeftUp: "url('/images/arrow-left-up.svg')",
+        arrowRightUp: "url('/images/arrow-right-up.svg')",
         circle: "url('/images/circle.svg')"
       },
       borderWidth: {
