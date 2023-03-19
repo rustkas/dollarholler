@@ -34,6 +34,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"date-fns": "^2.29.3"
+		"@types/uuid": "^9.0.1",
+		"date-fns": "^2.29.3",
+		"uuid": "^9.0.0"
 	}
 }
