@@ -1,4 +1,33 @@
 {
+  "clients": [
+    {
+      "address": "123 Street",
+      "city": "Somewhereville",
+      "email": "compressed@example.com",
+      "id": "1",
+      "name": "Compressed.fm",
+      "state": "TN",
+      "zip": "12345"
+    },
+    {
+      "address": "456 Drive",
+      "city": "Nowhere",
+      "email": "everythingsvelte@test.com",
+      "id": "2",
+      "name": "Everything Svelte",
+      "state": "TN",
+      "zip": "67890"
+    },
+    {
+      "address": "789 Boulevard",
+      "city": "Anywhere",
+      "email": "zeal@test.com",
+      "id": "3",
+      "name": "ZEAL",
+      "state": "TN",
+      "zip": "87654"
+    }
+  ],
   "invoices": [
     {
       "client": {
