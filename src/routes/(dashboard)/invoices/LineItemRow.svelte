@@ -1,14 +1,14 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import Trash from '$lib/components/Icon/Trash.svelte';
-  import { twoDecimals, dollarsToCents } from '$lib/utils/moneyHelpers';
+  import { twoDecimals, dollarsToCents, centsToDollars } from '$lib/utils/moneyHelpers';
 
   export let lineItem: LineItem;
   export let canDelete: boolean = false;
   export let isRequired: boolean = false;
 
-  let unitPrice: string = twoDecimals(lineItem.amount / lineItem.quantity);
-  let amount: string = twoDecimals(lineItem.amount);
+  let unitPrice: string = centsToDollars(lineItem.amount / lineItem.quantity);
+  let amount: string = centsToDollars(lineItem.amount);
 
   $: {
     amount = twoDecimals(lineItem.quantity * Number(unitPrice));

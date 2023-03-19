@@ -31,6 +31,8 @@
 
   let isModalShowing = false;
 
+  const initialDiscount = invoice.discount || 0;
+
   const AddLineItem = () => {
     invoice.lineItems = [...(invoice.lineItems as []), { ...blankLineItem, id: uuidv4() }];
   };
@@ -58,6 +60,10 @@
     }
 
     closePanel();
+  };
+
+  const UpdateDiscount = (event: CustomEvent) => {
+    invoice.discount = event.detail.discount;
   };
 
   onMount(() => {
@@ -193,6 +199,7 @@
       on:addLineItem={AddLineItem}
       on:removeLineItem={RemoveLineItem}
       on:updateLineItem={UpdateLineItem}
+      on:updateDiscount={UpdateDiscount}
     />
   </div>
 
