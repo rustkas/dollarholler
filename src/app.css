@@ -18,7 +18,7 @@
   input[type="date"],
   input[type="password"],
   input[type="email"] {
-    @apply h-14 w-full rounded-lg border-2 border-silver px-4 font-sansSerif text-base;
+    @apply h-10 lg:h-14 w-full rounded-lg border-2 border-silver px-4 font-sansSerif text-base;
   }
 
   textarea {
@@ -26,7 +26,7 @@
   }
 
   select {
-    @apply border-silver border-2 rounded-lg h-14 w-full p-4 appearance-none bg-chevronDown bg-no-repeat bg-right-center
+    @apply border-silver border-2 rounded-lg w-full px-4 lg:p-4 appearance-none bg-chevronDown bg-no-repeat bg-right-center h-10 lg:h-14
   }
 
   select:focus,
@@ -50,7 +50,36 @@
   }
 
   .invoice-line-item {
-    @apply grid grid-cols-invoiceLineItem gap-x-5;
+    @apply grid sm:grid-cols-invoiceLineItem gap-5 relative;
+    grid-template-areas: "description description description"
+      "unitPrice qty amount";
+  }
+
+  @media (min-width: 640px) {
+    .invoice-line-item {
+      grid-template-areas: "description unitPrice qty amount trash";
+    }
+  }
+
+  .invoice-line-item .description {
+    grid-area: description;
+  }
+
+  .invoice-line-item .unitPrice {
+    grid-area: unitPrice;
+  }
+
+  .invoice-line-item .qty {
+    grid-area: qty;
+  }
+
+  .invoice-line-item .amount {
+    grid-area: amount;
+  }
+
+  .invoice-line-item .trash {
+    @apply absolute top-0 right-0 sm:relative;;
+    grid-area: trash;
   }
 
   .field {

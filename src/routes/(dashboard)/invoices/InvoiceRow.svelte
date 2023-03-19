@@ -62,10 +62,10 @@
   <div class="amount text-right font-mono text-sm font-bold lg:text-lg">
     ${centsToDollars(invoiceTotal(invoice.lineItems, invoice.discount))}
   </div>
-  <div class="center viewButton hidden text-sm lg:flex lg:text-lg">
+  <div class="viewButton hidden items-center justify-center text-sm lg:flex lg:text-lg">
     <a href="#" class="text-pastelPurple hover:text-daisyBush"><View /></a>
   </div>
-  <div class="center moreButton relative hidden text-sm lg:flex lg:text-lg">
+  <div class="moreButton relative hidden items-center justify-center text-sm lg:flex lg:text-lg">
     <button
       class=" text-pastelPurple hover:text-daisyBush"
       on:click={() => {

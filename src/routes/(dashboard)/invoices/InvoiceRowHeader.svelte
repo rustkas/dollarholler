@@ -2,7 +2,7 @@
   export let className = '';
 </script>
 
-<div class={`table-header invoice-table hidde lg:grid ${className}`}>
+<div class={`table-header invoice-table hidden lg:grid ${className}`}>
   <h3>Status</h3>
   <h3>Due Date</h3>
   <h3>ID</h3>

@@ -77,11 +77,12 @@
 
 <form class="grid grid-cols-6 gap-x-5" on:submit|preventDefault={handleSubmit}>
   <!-- client -->
-  <div class="field col-span-4">
+  <div class="field col-span-6 md:col-span-4">
     {#if !isNewClient}
       <label for="client">Client</label>
-      <div class="flex items-end gap-x-5">
+      <div class="flex flex-wrap items-end gap-x-2 sm:flex-nowrap md:gap-x-5">
         <select
+          class="mb-2 sm:mb-0"
           name="client"
           id="client"
           required={!isNewClient}
@@ -96,7 +97,7 @@
             <option value={client.id}>{client.name}</option>
           {/each}
         </select>
-        <div class="text-base font-bold leading-[3.5rem] text-monsoon">or</div>
+        <div class="text-base font-bold leading-[2.25rem] text-monsoon lg:leading-[3.5rem]">or</div>
         <Button
           label="+ Client"
           onClick={() => {
@@ -110,9 +111,15 @@
       </div>
     {:else}
       <label for="NewClient">New Client</label>
-      <div class="flex items-end gap-x-5">
-        <input type="text" name="newClient" required={isNewClient} bind:value={newClient.name} />
-        <div class="text-base font-bold leading-[3.5rem] text-monsoon">or</div>
+      <div class="flex flex-wrap items-end gap-x-2 sm:flex-nowrap md:gap-x-5">
+        <input
+          type="text"
+          name="newClient"
+          required={isNewClient}
+          bind:value={newClient.name}
+          class="mb-2 sm:mb-0"
+        />
+        <div class="text-base font-bold leading-[2.25rem] text-monsoon lg:leading-[3.5rem]">or</div>
         <Button
           label="Existing Client"
           onClick={() => {
@@ -127,7 +134,7 @@
   </div>
 
   <!-- invoice id -->
-  <div class="field col-span-2">
+  <div class="field col-span-6 row-start-1 md:col-span-2 md:row-start-auto">
     <label for="invoiceNumber">Invoice ID</label>
     <input type="number" name="invoiceNumber" required bind:value={invoice.invoiceNumber} />
   </div>
@@ -174,13 +181,13 @@
   {/if}
 
   <!-- due date -->
-  <div class="field col-span-2">
+  <div class="field col-span-3 sm:col-span-2">
     <label for="dueDate">Due Date</label>
     <input type="date" name="dueDate" min={today} required bind:value={invoice.dueDate} />
   </div>
 
   <!-- issue date -->
-  <div class="field col-span-2 col-start-5">
+  <div class="field col-span-3 md:col-span-2 md:col-start-5">
     <label for="issueDate">Issue Date</label>
     <input type="date" name="issueDate" min={today} bind:value={invoice.issueDate} />
   </div>
