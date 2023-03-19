@@ -3,12 +3,18 @@
   import Button from '$lib/components/Button.svelte';
   import CircledAmount from '$lib/components/CircledAmount.svelte';
   import LineItemRow from './LineItemRow.svelte';
-  import { centsToDollars, sumLineItems, twoDecimals } from '$lib/utils/moneyHelpers';
+  import {
+    centsToDollars,
+    sumLineItems,
+    twoDecimals,
+    addThousandsSeparator
+  } from '$lib/utils/moneyHelpers';
 
   let subtotal: string = '0.00';
   export let discount: number = 0;
   let discountedAmount: string = '0.00';
   let total: string = '0.00';
+  export let isEditable = true;
 
   export let lineItems: LineItem[] | undefined = undefined;
   let dispatch = createEventDispatcher();
@@ -20,7 +26,10 @@
     discountedAmount = centsToDollars(sumLineItems(lineItems) * (discount / 100));
   }
 
-  $: total = twoDecimals(Number(subtotal) - Number(discountedAmount));
+  $: {
+    const plainSubtotal = subtotal.replace(',', '');
+    total = addThousandsSeparator(twoDecimals(Number(plainSubtotal) - Number(discountedAmount)));
+  }
 </script>
 
 <div class="invoice-line-item border-b-2 border-daisyBush pb-2">
@@ -38,20 +47,23 @@
       canDelete={index > 0}
       on:updateLineItem
       isRequired={index === 0}
+      {isEditable}
     />
   {/each}
 {/if}
 
 <div class="invoice-line-item">
   <div class="col-span-1 sm:col-span-2">
-    <Button
-      isAnimated={false}
-      label="+ Line Item"
-      style="textOnly"
-      onClick={() => {
-        dispatch('addLineItem');
-      }}
-    />
+    {#if isEditable}
+      <Button
+        isAnimated={false}
+        label="+ Line Item"
+        style="textOnly"
+        onClick={() => {
+          dispatch('addLineItem');
+        }}
+      />
+    {/if}
   </div>
   <div class="py-5 text-right font-bold text-monsoon">Subtotal</div>
   <div class="py-5 text-right font-mono">${subtotal}</div>
@@ -66,6 +78,7 @@
       name="discount"
       min="0"
       max="100"
+      disabled={!isEditable}
       bind:value={discount}
       on:change={() => {
         dispatch('updateDiscount', { discount });

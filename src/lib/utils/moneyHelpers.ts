@@ -9,6 +9,16 @@ export const sumLineItems = (lineItems: LineItem[] | undefined): number => {
 }
 
 /**
+ * Converting Cents to Dollars, without Commas
+ * @param {number} cents
+ * @returns {string}
+ */
+export const centsToDollarsWithoutCommas = (cents: number): string => {
+  const dollars = cents / 100;
+  return twoDecimals(dollars);
+}
+
+/**
  * Takes the lineItems and discount and determines the invoice total
  * @param {Array|undefined} lineItems
  * @param {number|undefined} discount
