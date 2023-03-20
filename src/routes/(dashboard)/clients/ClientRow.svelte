@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { clickOutside } from '$lib/actions/ClickOutside';
   import AdditionalOptions from '$lib/components/AdditionalOptions.svelte';
   import ThreeDots from '$lib/components/Icon/ThreeDots.svelte';
   import View from '$lib/components/Icon/View.svelte';
@@ -62,7 +63,12 @@
   <div class="relative hidden items-center justify-center lg:flex">
     <a href={`/clients/${client.id}`} class="text-pastelPurple hover:text-daisyBush"><View /></a>
   </div>
-  <div class="relative hidden items-center justify-center lg:flex">
+  <div
+    class="relative hidden items-center justify-center lg:flex"
+    use:clickOutside={() => {
+      isAdditionalMenuShowing = false;
+    }}
+  >
     <button
       class="text-pastelPurple hover:text-daisyBush"
       on:click={() => {
