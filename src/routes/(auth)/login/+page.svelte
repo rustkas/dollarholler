@@ -1,10 +1,14 @@
 <script lang="ts">
-  let email: string, password: string;
+  import Alert from '$lib/components/Alert.svelte';
+  let email: string,
+    password: string,
+    alertMessage = '';
 </script>
 
 <h1 class="mb-4 text-[2.5rem] font-black text-goldenFizz">Login</h1>
 
 <form>
+  <Alert message={alertMessage} />
   <div class="field">
     <label for="email" class="text-goldenFizz">Email Address</label>
     <input type="email" name="email" placeholder="Your Email" bind:value={email} />
