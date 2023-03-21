@@ -1,6 +1,10 @@
 import { createClient } from '@supabase/supabase-js'
+import { env } from '$env/dynamic/public'
+
+const supabaseUrl = env.PUBLIC_SUPABASE_URL
+const supabaseAnonKey = env.PUBLIC_SUPABASE_ANON_KEY
 
 // Create a single supabase client for interacting with your database
-const supabase = createClient('https://lkynzsuxhxvdtcdlosxm.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxreW56c3V4aHh2ZHRjZGxvc3htIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzA3OTY1ODYsImV4cCI6MTk4NjM3MjU4Nn0.NwNsri2RG4XghpxFsJoQfoXoZfIlcTWHFZVYb7SHtgU')
+const supabase = createClient(supabaseUrl as string, supabaseAnonKey as string)
 
 export default supabase
