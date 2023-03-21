@@ -207,6 +207,18 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
+"@supabase/auth-helpers-shared@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@supabase/auth-helpers-shared/-/auth-helpers-shared-0.3.0.tgz#765e023801572658ba64503b3625fe9e135b10a3"
+  integrity sha512-6lKhVMBZnGdFelpZyvQDBQSOY+pglS6a5U4ieAqfKQ/rx3rSjRASR3UGh7V+el1re3xYe3ddVBWXw16rdVAzrQ==
+
+"@supabase/auth-helpers-sveltekit@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@supabase/auth-helpers-sveltekit/-/auth-helpers-sveltekit-0.9.0.tgz#0a5bf74c938f1e2a9ec798529ba74e480cf90e1c"
+  integrity sha512-Czdiv2/fwCMW552btgk69Ufxb+X/FU6mOXBXABekDYNdpkllPmm3R3GCofuf88RcBQZB3gIiio8DdxN4vKP/pw==
+  dependencies:
+    "@supabase/auth-helpers-shared" "0.3.0"
+
 "@supabase/functions-js@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@supabase/functions-js/-/functions-js-2.1.0.tgz#60e304c6f56b2a56f051277e00b0c9eb5453cfcb"
