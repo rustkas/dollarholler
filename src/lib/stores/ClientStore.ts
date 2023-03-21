@@ -1,3 +1,4 @@
+import { displayErrorMessage } from "$lib/utils/handleError";
 import supabase from "$lib/utils/supabase";
 import { writable } from "svelte/store";
 import { snackbar } from "./SnackbarStore";
@@ -26,15 +27,16 @@ export const addClient = async (clientToAdd: Client) => {
     .select()
 
   if (error) {
-    console.error(error);
-    snackbar.send({
-      message: error.message,
-      type: "error",
-    })
+    displayErrorMessage(error as Error)
     return;
   }
 
   const id = data[0].id;
+
+  snackbar.send({
+    message: 'Your client was successfully created.',
+    type: 'success'
+  });
 
   clients.update((prev: Client[]) => [...prev, { ...clientToAdd, clientStatus: "active", id }]);
   return clientToAdd;

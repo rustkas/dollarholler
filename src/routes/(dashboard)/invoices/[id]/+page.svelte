@@ -93,7 +93,7 @@
   <div class="col-span-6 sm:col-span-3">
     <div class="label">Bill To:</div>
     <p>
-      <strong>{data.invoice.client.name}</strong><br />
+      {data.invoice.client.name}<strong>{data.invoice.client.name}</strong><br />
       {data.invoice.client.email}<br />
       {data.invoice.client.street}<br />
       {data.invoice.client.city}, {data.invoice.client.state}
