@@ -34,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@supabase/supabase-js": "^2.12.0",
 		"@types/uuid": "^9.0.1",
 		"date-fns": "^2.29.3",
 		"svelte-markdown": "^0.2.3",
